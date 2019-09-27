@@ -2,9 +2,16 @@
 /* Fonts */
 h2{
     color: brown;
+    font-family: 'Lobster', cursive;
 }
 
 a {
     color: brown;
     font-weight: bold;
+    font-family: 'Lobster', cursive;
+}
+
+p{
+    font-family: 'Satisfy', cursive;
+    font-size: 25px;
 }
