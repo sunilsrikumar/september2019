@@ -14,11 +14,14 @@
     <div class="container">
         <h2>Django Blog</h2>
         <hr>
-        <h4>First Blog</h4>
-        <p>Be sure to have your pages set up with the latest design and development standards. That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. Put it all together and your pages should look like this:</p>
+        {% for post in posts %}
+        <div>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>Published by {{post.author}} on: {{ post.published_date }}</p>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
         <hr>
-        <h4>Second Blog</h4>
-        <p>Be sure to have your pages set up with the latest design and development standards. That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. Put it all together and your pages should look like this:</p>
+        {% endfor %}
 
     </div>
 
