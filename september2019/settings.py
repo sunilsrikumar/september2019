@@ -30,13 +30,16 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
+    'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +57,7 @@ ROOT_URLCONF = 'september2019.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +122,23 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Django redux registration
+ACCOUNT_ACTIVATION_DAYS = 7
+# REGISTRATION_DEFAULT_FROM_EMAIL
+# REGISTRATION_EMAIL_HTML
+REGISTRATION_AUTO_LOGIN = True
+# ACCOUNT_AUTHENTICATED_REGISTRATION_REDIRECTS
+# REGISTRATION_USE_SITE_EMAIL
+# REGISTRATION_SITE_USER_EMAIL
+
+SITE_ID = 1
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Email Configuration
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'codenjump@gmail.com'
+EMAIL_HOST_PASSWORD = '3Af3%!E2Bd7r'
+EMAIL_PORT = 587
